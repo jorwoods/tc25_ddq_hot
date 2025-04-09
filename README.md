@@ -110,7 +110,7 @@ tableau:views:download
 
 To work with the REST API, you need the site ID as it appears in the URL.
 
-!IMAGE[find_site_id.jpg](instructions287866/find_site_id.jpg)
+![find_site_id.jpg](instructions287866/find_site_id.jpg)
 
 ## Publish demo workbook
 
