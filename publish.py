@@ -58,17 +58,17 @@ def publish_workbook(server: TSC.Server, workbook_file_path: str) -> TSC.Workboo
             # connections=[connection],
             skip_connection_check=True,
         )
-    
+
     return workbook
 
 def add_connection_details(server: TSC.Server, workbook: TSC.WorkbookItem) -> None:
         connection = TSC.ConnectionItem()
-        connection.server_address = "aws-0-us-west-1.pooler.supabase.com"
+        connection.server_address = ""
         connection.server_port = "5432"
-        connection.username = "postgres.xqeozpibcbggvezbxjps"
-        connection.password = "abcd"
+        connection.username = "postgres"
+        connection.password = "upxm5sverHnLlgwj"
         connection.embed_password = True
-        
+
         server.workbooks.populate_connections(workbook)
         connections = [c for c in workbook.connections if c.server_address == connection.server_address]
         for conn in connections:
@@ -85,8 +85,8 @@ def main() -> None:
     with get_server() as server:
         server: TSC.Server
         # Get the project ID
-        
-        workbook_file_path = Path(__file__).parent / "TC25 DDQ HOT.twbx"
+
+        workbook_file_path = Path(__file__).parent / "TC25 DDQ HOT.twb"
         workbook = publish_workbook(server, workbook_file_path)
         print(f"Published workbook: {workbook.name}")
         add_connection_details(server, workbook)
